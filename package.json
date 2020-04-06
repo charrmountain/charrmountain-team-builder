@@ -1,0 +1,20 @@
+{
+  "name": "team-builder",
+  "version": "1.0.0",
+  "description": "[Deployed Link](https://charrmountain.github.io/team-builder/)",
+  "main": "index.js",
+  "scripts": {
+    "test": "echo \"Error: no test specified\" && exit 1"
+  },
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/charrmountain/team-builder.git"
+  },
+  "keywords": [],
+  "author": "",
+  "license": "ISC",
+  "bugs": {
+    "url": "https://github.com/charrmountain/team-builder/issues"
+  },
+  "homepage": "https://github.com/charrmountain/team-builder#readme"
+}
