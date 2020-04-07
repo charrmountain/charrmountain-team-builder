@@ -43,7 +43,7 @@ function promptManager() {
             message: "What is your office number?"
         }
     ]).then(managerAnswers => {
-        const manager = Object.assign(managerAnswers)
+        let manager = new Manager(managerAnswers)
         employees.push(manager);
         nextEmployee();
       })
@@ -96,7 +96,7 @@ function promptEngineer() {
             message: "What is their GitHub username?"
         }
     ]).then(engineerAnswers => {
-        const engineer = Object.assign(engineerAnswers)
+        let engineer = new Engineer(engineerAnswers)
         employees.push(engineer);
         nextEmployee();
       })
@@ -125,7 +125,8 @@ function promptIntern() {
             message: "What school are they attending?"
         }
     ]).then(internAnswers => {
-        const intern = Object.assign(internAnswers)
+        let intern = new Intern (internAnswers)
+        // intern = Object.assign(internAnswers)
         employees.push(intern);
         nextEmployee();
       })
