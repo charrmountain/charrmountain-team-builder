@@ -62,7 +62,10 @@ function nextEmployee(){
         } if (result.employee === "Intern"){
             promptIntern();
         } if (result.employee === "No one"){
-            render(employees);
+            fs.writeFile(outputPath, render(employees), function(err) {
+                if (err) throw err;
+                console.log("html created");
+            });
         }
       })
 }
