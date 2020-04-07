@@ -126,7 +126,6 @@ function promptIntern() {
         }
     ]).then(internAnswers => {
         let intern = new Intern (internAnswers)
-        // intern = Object.assign(internAnswers)
         employees.push(intern);
         nextEmployee();
       })
