@@ -61,7 +61,6 @@ function promptManager() {
       managerOffice
     );
     employees.push(manager);
-    console.log(manager);
     nextEmployee();
   });
 }
