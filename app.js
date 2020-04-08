@@ -137,7 +137,7 @@ function promptIntern() {
         const internName = internAnswers.name
         const internID = internAnswers.ID
         const internEmail = internAnswers.email
-        const internSchool = internAnswers.github
+        const internSchool = internAnswers.school
         let intern = new Intern(internName, internID, internEmail, internSchool)
         employees.push(intern);
         nextEmployee();
