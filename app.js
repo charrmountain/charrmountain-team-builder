@@ -43,8 +43,13 @@ function promptManager() {
             message: "What is your office number?"
         }
     ]).then(managerAnswers => {
-        let manager = new Manager(managerAnswers)
+        const managerName = managerAnswers.name
+        const managerID = managerAnswers.ID
+        const managerEmail = managerAnswers.email
+        const managerOffice = managerAnswers.office
+        let manager = new Manager(managerName, managerID,managerEmail,managerOffice )
         employees.push(manager);
+        console.log(manager);
         nextEmployee();
       })
 
@@ -96,7 +101,11 @@ function promptEngineer() {
             message: "What is their GitHub username?"
         }
     ]).then(engineerAnswers => {
-        let engineer = new Engineer(engineerAnswers)
+        const engineerName = engineerAnswers.name
+        const engineerID = engineerAnswers.ID
+        const engineerEmail = engineerAnswers.email
+        const engineerGithub = engineerAnswers.github
+        let engineer = new Engineer(engineerName, engineerID, engineerEmail, engineerGithub)
         employees.push(engineer);
         nextEmployee();
       })
@@ -125,7 +134,11 @@ function promptIntern() {
             message: "What school are they attending?"
         }
     ]).then(internAnswers => {
-        let intern = new Intern (internAnswers)
+        const internName = internAnswers.name
+        const internID = internAnswers.ID
+        const internEmail = internAnswers.email
+        const internSchool = internAnswers.github
+        let intern = new Intern(internName, internID, internEmail, internSchool)
         employees.push(intern);
         nextEmployee();
       })
