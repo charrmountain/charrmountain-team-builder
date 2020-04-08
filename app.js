@@ -12,138 +12,126 @@ const render = require("./lib/htmlRenderer");
 
 start();
 
-function start (){
-    promptManager();
+function start() {
+  promptManager();
 }
 
 // Write code to use inquirer to gather information about the development team members,
 // and to create objects for each team member (using the correct classes as blueprints!)
-const employees = [] 
+const employees = [];
+
+function promptForEmployeeData(uniqueQuestions) {
+  const sharedQuestions = [
+    {
+      type: "input",
+      name: "name",
+      message: "What is your name?",
+    },
+    {
+      type: "input",
+      name: "ID",
+      message: "What is your ID number?",
+    },
+    {
+      type: "input",
+      name: "email",
+      message: "What is your e-mail?",
+    }
+  ];
+  const questions = sharedQuestions.concat(uniqueQuestions);
+  return inquirer.prompt(questions);
+}
 
 function promptManager() {
-    inquirer.prompt([
-        {
-            type: "input",
-            name: "name",
-            message: "What is your name?"
-        },
-        {
-            type: "input",
-            name: "ID",
-            message: "What is your ID number?"
-        },
-        {
-            type: "input",
-            name: "email",
-            message: "What is your e-mail?"
-        }, 
-        {
-            type: "input",
-            name: "office",
-            message: "What is your office number?"
-        }
-    ]).then(managerAnswers => {
-        const managerName = managerAnswers.name
-        const managerID = managerAnswers.ID
-        const managerEmail = managerAnswers.email
-        const managerOffice = managerAnswers.office
-        let manager = new Manager(managerName, managerID,managerEmail,managerOffice )
-        employees.push(manager);
-        console.log(manager);
-        nextEmployee();
-      })
-
+  promptForEmployeeData([
+    {
+      type: "input",
+      name: "office",
+      message: "What is your office number?",
+    }
+  ]).then((managerAnswers) => {
+    const managerName = managerAnswers.name;
+    const managerID = managerAnswers.ID;
+    const managerEmail = managerAnswers.email;
+    const managerOffice = managerAnswers.office;
+    let manager = new Manager(
+      managerName,
+      managerID,
+      managerEmail,
+      managerOffice
+    );
+    employees.push(manager);
+    console.log(manager);
+    nextEmployee();
+  });
 }
 
-function nextEmployee(){
-    inquirer.prompt([
-        {
-            type: "list",
-            name: "employee",
-            message: "Next teammate?",
-            choices: ["Engineer", "Intern", "No one"]
-        }
-    ]).then(result => {
-        if (result.employee === "Engineer"){
-            promptEngineer();
-        } if (result.employee === "Intern"){
-            promptIntern();
-        } if (result.employee === "No one"){
-            fs.writeFile(outputPath, render(employees), function(err) {
-                if (err) throw err;
-                console.log("Team HTML Created!");
-            });
-        }
-      })
+function nextEmployee() {
+  inquirer
+    .prompt([
+      {
+        type: "list",
+        name: "employee",
+        message: "Next teammate?",
+        choices: ["Engineer", "Intern", "No one"],
+      }
+    ])
+    .then((result) => {
+      if (result.employee === "Engineer") {
+        promptEngineer();
+      }
+      if (result.employee === "Intern") {
+        promptIntern();
+      }
+      if (result.employee === "No one") {
+        fs.writeFile(outputPath, render(employees), function (err) {
+          if (err) throw err;
+          console.log("Team HTML Created!");
+        });
+      }
+    });
 }
-
 
 function promptEngineer() {
-    inquirer.prompt([
-        {
-            type: "input",
-            name: "name",
-            message: "What is their name?"
-        },
-        {
-            type: "input",
-            name: "ID",
-            message: "What is their ID number?"
-        },
-        {
-            type: "input",
-            name: "email",
-            message: "What is their e-mail?"
-        }, 
-        {
-            type: "input",
-            name: "github",
-            message: "What is their GitHub username?"
-        }
-    ]).then(engineerAnswers => {
-        const engineerName = engineerAnswers.name
-        const engineerID = engineerAnswers.ID
-        const engineerEmail = engineerAnswers.email
-        const engineerGithub = engineerAnswers.github
-        let engineer = new Engineer(engineerName, engineerID, engineerEmail, engineerGithub)
-        employees.push(engineer);
-        nextEmployee();
-      })
+  promptForEmployeeData([
+    {
+      type: "input",
+      name: "github",
+      message: "What is their GitHub username?",
+    }
+  ]).then((engineerAnswers) => {
+    const engineerName = engineerAnswers.name;
+    const engineerID = engineerAnswers.ID;
+    const engineerEmail = engineerAnswers.email;
+    const engineerGithub = engineerAnswers.github;
+    let engineer = new Engineer(
+      engineerName,
+      engineerID,
+      engineerEmail,
+      engineerGithub
+    );
+    employees.push(engineer);
+    nextEmployee();
+  });
 }
 
 function promptIntern() {
-    inquirer.prompt([
-        {
-            type: "input",
-            name: "name",
-            message: "What is their name?"
-        },
-        {
-            type: "input",
-            name: "ID",
-            message: "What is their ID number?"
-        },
-        {
-            type: "input",
-            name: "email",
-            message: "What is their e-mail?"
-        }, 
-        {
-            type: "input",
-            name: "school",
-            message: "What school are they attending?"
-        }
-    ]).then(internAnswers => {
-        const internName = internAnswers.name
-        const internID = internAnswers.ID
-        const internEmail = internAnswers.email
-        const internSchool = internAnswers.school
-        let intern = new Intern(internName, internID, internEmail, internSchool)
-        employees.push(intern);
-        nextEmployee();
-      })
+  promptForEmployeeData([
+    {
+      type: "input",
+      name: "school",
+      message: "What school are they attending?"
+    }
+  ]).then((internAnswers) => {
+    const internName = internAnswers.name;
+    const internID = internAnswers.ID;
+    const internEmail = internAnswers.email;
+    const internSchool = internAnswers.school;
+    let intern = new Intern(internName, internID, internEmail, internSchool);
+    employees.push(intern);
+    nextEmployee();
+  });
 }
-
 
 // After the user has input all employees desired, call the `render` function (required
 // above) and pass in an array containing all employee objects; the `render` function will
