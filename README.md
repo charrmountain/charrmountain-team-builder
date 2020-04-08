@@ -22,8 +22,8 @@
 
     - ### **HTML pages:**
          1. [app.js](app.js) is the main JavaScript to run application
-         2. [lib] folder contains all the JavaScript files for each employee.
-         3. [test] folder contains all the tests for each JavaScript file for each employee.
+         2. [lib](/Users/Charlotte/Coding-Bootcamp/Homework/team-builder/lib) folder contains all the JavaScript files for each employee.
+         3. [test](/Users/Charlotte/Coding-Bootcamp/Homework/team-builder/test) folder contains all the tests for each JavaScript file for each employee.
 
     - ### **Style Sheets** (used on all HTML pages)**:**
          3. [style.css](style.css) (created by Coding-Bootcamp)
@@ -32,7 +32,7 @@
 
 
 ## **Usage**
-- A team building command line based application that allows the user to Generates a [team.html] in the [output] folder.
+- A team building command line based application that allows the user to Generates a 'team.html' in the [output](/Users/Charlotte/Coding-Bootcamp/Homework/team-builder/output) folder.
 
 - Please run the following tests before beginning:
 ```
@@ -40,7 +40,7 @@ npm i
 ```
 
 ## **Tests**
-- All tests are located in the [test] file. There is a test for each employee.
+- All tests are located in the [test](/Users/Charlotte/Coding-Bootcamp/Homework/team-builder/test) file. There is a test for each employee.
 
 ## **Support**
     
