@@ -1,31 +1,48 @@
 #  **Team Template Builder** #
 
-[Deployed Link](https://charrmountain.github.io/team-builder/)
+- [GitHub](https://github.com/charrmountain/team-builder)
+
+## Table of Contents
+
+- [Description](#description) 
+
+- [Visual](#visual) 
+
+- [Usage](#usage) 
+
+- [Contributing](#contributing) 
+
+- [Tests](#tests) 
+
+- [Support](#support) 
 
 ## **Description**
 
--  User can create a team template through the command line. Managers may add engineers, and interns to their team. All employees have their name, ID number, and e-mail included. While each employee has one unique piece of information. Managers have their office number, Engineers have their GitHub profile, and the Interns have their school name. Great way to keep track of your entire team!
+-  A software engineering team generator command line application that prompts the user for information about the team manager and then information about the team members.
 
     - ### **HTML pages:**
-         1. [index.html](index.html) is the main password generator page
-         2. [script.js](portfolio.html) is the JavaScript for script to make generator run correctly.
+         1. [app.js](app.js) is the main JavaScript to run application
+         2. [lib] folder contains all the JavaScript files for each employee.
+         3. [test] folder contains all the tests for each JavaScript file for each employee.
 
     - ### **Style Sheets** (used on all HTML pages)**:**
          3. [style.css](style.css) (created by Coding-Bootcamp)
 
 ## **Visuals**
-![alt](images/password-generator.png)
-- When user clicks generate password they will be prompted with a series of questions.
-    - How long would you like the password?
-    - Do you want lowercase characters?
-    - Do you want uppercase characters?
-    - Do you want numeric characters?
-    - Do you want special characters?
-- Users will notice where the "Your Secure Password" will now display their new password with their chosen length and characters
+
 
 ## **Usage**
-- Generates a safe and customizable password for user.
+- A team building command line based application that allows the user to Generates a [team.html] in the [output] folder.
+
+- Please run the following tests before beginning:
+```
+npm i
+```
+
+## **Tests**
+- All tests are located in the [test] file. There is a test for each employee.
 
 ## **Support**
+    
+[<img src="https://avatars3.githubusercontent.com/u/60668617?v=4" alt="avatar" style="border-radius: 75px" width="75"/>](https://github.com/charrmountain)
 - e-mail: charr.mt@gmail.com
-- [GitHub](https://github.com/charrmountain/password-generator)

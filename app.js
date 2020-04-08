@@ -66,7 +66,7 @@ function nextEmployee(){
         } if (result.employee === "No one"){
             fs.writeFile(outputPath, render(employees), function(err) {
                 if (err) throw err;
-                console.log("html created");
+                console.log("Team HTML Created!");
             });
         }
       })
