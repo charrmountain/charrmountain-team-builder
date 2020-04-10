@@ -36,8 +36,13 @@
          3. [style.css](style.css) (created by Coding-Bootcamp)
 
 ## **Visuals**
+![alt](demo/teamDemo.gif)
+ 
+ - Example of the command line questions
+ 
 ![alt](demo/demo.png)
-       - Example of the team.html that will be created
+
+ - Example of the team.html that will be created
 
 ## **Usage**
 - A team building command line based application that allows the user to Generates a 'team.html' in the [output](/Users/Charlotte/Coding-Bootcamp/Homework/team-builder/output) folder.
