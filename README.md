@@ -20,7 +20,7 @@
 
 -  A software engineering team generator command line application that prompts the user for information about the team manager and then information about the team members.
 
-    - ### **HTML pages:**
+    - ### **JavaScript pages:**
          1. [app.js](app.js) is the main JavaScript to run application
          2. [lib](/Users/Charlotte/Coding-Bootcamp/Homework/team-builder/lib) folder contains all the JavaScript files for each employee.
          3. [test](/Users/Charlotte/Coding-Bootcamp/Homework/team-builder/test) folder contains all the tests for each JavaScript file for each employee.
